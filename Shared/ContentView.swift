@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    init(){
+        UITabBar.appearance().barTintColor = UIColor(.white)
+        UITabBar.appearance().clipsToBounds = true
+
+    }
     var body: some View {
-        Text("Hello, world!").padding()
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "translate").imageScale(.large)
+                    Text("Translate")
+                }
+            
+            
+            Text("Favourites")
+                .tabItem {
+                    Image(systemName: "star.fill").imageScale(.large)
+                    Text("Favourites")
+                }
+        }.accentColor(Color(.systemTeal))
     }
 }
 
