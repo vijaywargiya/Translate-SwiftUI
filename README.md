@@ -1,3 +1,3 @@
 # Translate-SwiftUI
 
-![animation](https://github.com/vijaywargiya/LegoLoadingAnimation-SwiftUI/blob/main/Translate.gif)
+![animation](https://github.com/vijaywargiya/Translate-SwiftUI/blob/main/Translate.gif)
