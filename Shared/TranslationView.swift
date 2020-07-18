@@ -16,6 +16,7 @@ struct screen {
 struct TranslationView: View {
     var body: some View {
         VStack(spacing: 20){
+            
             VStack {
                 HStack{
                     Text("English (US)").font(.system(size: 15, weight: .medium, design: .rounded))

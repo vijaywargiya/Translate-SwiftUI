@@ -13,9 +13,14 @@ struct HomeView: View {
             Color(.systemGroupedBackground)
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
-            TranslationView()
-                .padding(.bottom, 200)
+            VStack(spacing: 0) {
+                Actions()
+                TranslationView()
+                Spacer()
+            }
+            
             BottomSheet()
+            
         }
         
     }
