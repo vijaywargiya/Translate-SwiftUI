@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BottomSheet: View {
-    @State var isListeningActive = false
     @State var viewState = CGSize.zero
     @StateObject var editorController = EditorController()
     
@@ -82,7 +81,7 @@ struct BottomSheet: View {
                     }
                     .opacity(isListeningActive ? 1 : 0)
                     
-                    voice.opacity(isExpanded ? 0 : 1)
+                    micButton.opacity(isExpanded ? 0 : 1)
                 }
             }
             .zIndex(3)
@@ -93,7 +92,10 @@ struct BottomSheet: View {
         
     }
     
-    var voice: some View {
+    
+    @State var isListeningActive = false
+    
+    var micButton: some View {
         Image(systemName: "mic.fill")
             .font(.system(size: 35, weight: .regular, design: .rounded))
             .foregroundColor(Color(.systemGray6))
@@ -138,6 +140,7 @@ struct BottomSheet: View {
         editorController.isActive = true
     }
 }
+
 
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {

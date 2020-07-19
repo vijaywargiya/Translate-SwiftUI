@@ -8,31 +8,41 @@
 import SwiftUI
 
 struct Actions: View {
+    @State var isPresented: Bool = false
+    
     var body: some View {
         HStack{
-            from
-            to
+            Button(action: {
+                isPresented = true
+            }){
+                VStack{
+                    Text("English").font(.body)
+                    Text("US").font(.caption).foregroundColor(.secondary)
+                }
+                .foregroundColor(Color(.label))
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .frame(height: 50)
+                .background(Color("background"))
+                .cornerRadius(10)
+            }
+            
+            Button(action: {
+                isPresented = true
+            }){
+                VStack{
+                    Text("Spanish").font(.body)
+                }
+                .foregroundColor(Color(.label))
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .frame(height: 50)
+                .background(Color("background"))
+                .cornerRadius(10)
+            }
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-    }
-    
-    var from: some View {
-        VStack{
-            Text("English").font(.body)
-            Text("US").font(.caption).foregroundColor(.secondary)
+        .sheet(isPresented: $isPresented) {
+            Text("Sheet")
         }
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .frame(height: 50)
-        .background(Color("background"))
-        .cornerRadius(10)
-    }
-    
-    var to: some View{
-        Text("Spanish")
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .frame(height: 50)
-            .background(Color("background"))
-            .cornerRadius(10)
     }
 }
 

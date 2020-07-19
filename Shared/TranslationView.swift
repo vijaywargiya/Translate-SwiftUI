@@ -15,29 +15,17 @@ struct screen {
 
 struct TranslationView: View {
     var body: some View {
-        VStack(spacing: 20){
-            
-            VStack {
-                HStack{
-                    Text("English (US)").font(.system(size: 15, weight: .medium, design: .rounded))
-                    Spacer()
-                }
-                HStack{
-                    Text("How are you").font(.system(size: 30, weight: .semibold, design: .rounded))
-                    Spacer()
-                }
+        VStack(alignment: .leading, spacing: 20){
+            VStack(alignment: .leading) {
+                Text("English (US)").font(.system(size: 15, weight: .medium, design: .rounded))
+                Text("How are you").font(.system(size: 30, weight: .semibold, design: .rounded))
             }
+            
             Divider()
             
-            VStack {
-                HStack{
-                    Text("Spanish").font(.system(size: 15, weight: .medium, design: .rounded))
-                    Spacer()
-                }
-                HStack{
-                    Text("Como estas?").font(.system(size: 30, weight: .semibold, design: .rounded))
-                    Spacer()
-                }
+            VStack(alignment: .leading) {
+                Text("Spanish").font(.system(size: 15, weight: .medium, design: .rounded))
+                Text("Como estas?").font(.system(size: 30, weight: .semibold, design: .rounded))
             }.foregroundColor(Color(.systemTeal))
             
             Spacer()
